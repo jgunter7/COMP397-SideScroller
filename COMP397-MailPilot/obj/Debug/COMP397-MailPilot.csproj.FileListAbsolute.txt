@@ -1,0 +1,6 @@
+C:\Users\Jason\Downloads\COMP397-MailPilot-atlas\COMP397-MailPilot-atlas\COMP397-MailPilot\bin\COMP397-Lesson02-Part2.dll.config
+C:\Users\Jason\Downloads\COMP397-MailPilot-atlas\COMP397-MailPilot-atlas\COMP397-MailPilot\bin\COMP397-Lesson02-Part2.dll
+C:\Users\Jason\Downloads\COMP397-MailPilot-atlas\COMP397-MailPilot-atlas\COMP397-MailPilot\bin\COMP397-Lesson02-Part2.pdb
+C:\Users\Jason\Downloads\COMP397-MailPilot-atlas\COMP397-MailPilot-atlas\COMP397-MailPilot\obj\Debug\COMP397-MailPilot.csprojResolveAssemblyReference.cache
+C:\Users\Jason\Downloads\COMP397-MailPilot-atlas\COMP397-MailPilot-atlas\COMP397-MailPilot\obj\Debug\COMP397-Lesson02-Part2.dll
+C:\Users\Jason\Downloads\COMP397-MailPilot-atlas\COMP397-MailPilot-atlas\COMP397-MailPilot\obj\Debug\COMP397-Lesson02-Part2.pdb
