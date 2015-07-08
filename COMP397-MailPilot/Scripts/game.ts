@@ -8,7 +8,8 @@
 /// <reference path="managers/asset.ts" />
 
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/ocean.ts" />
+/// <reference path="objects/city.ts" />
+/// <reference path="objects/road.ts" />
 /// <reference path="objects/plane.ts" />
 /// <reference path="objects/island.ts" />
 /// <reference path="objects/cloud.ts" />
@@ -31,7 +32,8 @@ var game: createjs.Container;
 
 
 // Game Variables
-var ocean: objects.Ocean;
+var city: objects.City;
+var road: objects.Road;
 var plane: objects.Plane;
 var island: objects.Island;
 var clouds: objects.Cloud[] = [];

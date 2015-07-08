@@ -6,7 +6,8 @@
 /// <reference path="utility/utility.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/ocean.ts" />
+/// <reference path="objects/city.ts" />
+/// <reference path="objects/road.ts" />
 /// <reference path="objects/plane.ts" />
 /// <reference path="objects/island.ts" />
 /// <reference path="objects/cloud.ts" />
@@ -20,7 +21,8 @@ var stage;
 var stats;
 var game;
 // Game Variables
-var ocean;
+var city;
+var road;
 var plane;
 var island;
 var clouds = [];

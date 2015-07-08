@@ -5,10 +5,8 @@ var managers;
         function Asset() {
             // PRIVATE PROPERTIES
             this.manifest = [
-                { id: "ocean", src: "assets/images/ocean.gif" },
-                { id: "yay", src: "assets/audio/yay.ogg" },
-                { id: "thunder", src: "assets/audio/thunder.ogg" },
-                { id: "engine", src: "assets/audio/engine.ogg" }
+                { id: "city", src: "assets/images/city.png" },
+                { id: "road", src: "assets/images/road.png" },
             ];
             this.data = {
                 "images": [

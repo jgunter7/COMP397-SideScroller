@@ -8,7 +8,8 @@ var states;
         // PUBLIC METHODS
         // update method
         Play.prototype.update = function () {
-            ocean.update();
+            city.update();
+            road.update();
             plane.update();
             island.update();
             for (var cloud = 0; cloud < 3; cloud++) {
@@ -23,8 +24,10 @@ var states;
             // instantiate new game container
             game = new createjs.Container();
             //add ocean object to stage
-            ocean = new objects.Ocean(assets.loader.getResult("ocean"));
-            game.addChild(ocean);
+            city = new objects.City(assets.loader.getResult("city"));
+            game.addChild(city);
+            road = new objects.Road(assets.loader.getResult("road"));
+            game.addChild(road);
             //add island object to stage
             island = new objects.Island("island");
             game.addChild(island);

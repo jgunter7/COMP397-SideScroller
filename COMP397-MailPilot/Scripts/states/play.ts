@@ -11,7 +11,8 @@
         // PUBLIC METHODS
         // update method
         public update() {
-            ocean.update();
+            city.update();
+            road.update();
             plane.update();
             island.update();
 
@@ -31,8 +32,11 @@
         game = new createjs.Container();
 
         //add ocean object to stage
-        ocean = new objects.Ocean(assets.loader.getResult("ocean"));
-        game.addChild(ocean);
+        city = new objects.City(assets.loader.getResult("city"));
+        game.addChild(city);
+
+        road = new objects.Road(assets.loader.getResult("road"));
+        game.addChild(road);
 
         //add island object to stage
         island = new objects.Island("island");
