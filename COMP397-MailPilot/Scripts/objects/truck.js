@@ -32,4 +32,4 @@ var objects;
     })(objects.GameObject);
     objects.Truck = Truck;
 })(objects || (objects = {}));
-//# sourceMappingURL=Truck.js.map
+//# sourceMappingURL=truck.js.map
