@@ -1,12 +1,13 @@
 ﻿module objects {
     // Plane Class ++++++++++++++++++++++++++++++++++++++
-    export class Plane extends objects.GameObject {
+    export class Truck extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
 
             this.sound = "engine";
 
+            this.x = 50;
             this.y = 430;
 
             createjs.Sound.play(this.sound, {"loop": -1});
@@ -14,7 +15,11 @@
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
-            this.x = stage.mouseX; // position plane under mouse
+            this.y = stage.mouseY; // position plane under mouse
+            if (this.y > 450)
+                this.y = 450;
+            if (this.y < 335)
+                this.y = 335;
         }
     }
 } 

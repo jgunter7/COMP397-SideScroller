@@ -59,9 +59,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\audio\car.wav" />
+    <Content Include="assets\audio\ching.wav" />
+    <Content Include="assets\audio\crash.wav" />
     <Content Include="assets\images\atlas.png" />
+    <Content Include="assets\images\back.png" />
     <Content Include="assets\images\city.png" />
+    <Content Include="assets\images\instru.png" />
+    <Content Include="assets\images\quit.png" />
     <Content Include="assets\images\road.png" />
+    <Content Include="assets\images\start.png" />
     <Content Include="packages.config" />
     <Content Include="assets\images\atlas.json" />
     <None Include="Web.Debug.config">
@@ -85,20 +92,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\audio\" />
     <Folder Include="assets\fonts\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\managers\asset.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
-    <TypeScriptCompile Include="Scripts\objects\cloud.ts" />
+    <TypeScriptCompile Include="Scripts\objects\lambo.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
-    <TypeScriptCompile Include="Scripts\objects\island.ts" />
+    <TypeScriptCompile Include="Scripts\objects\coin.ts" />
     <TypeScriptCompile Include="Scripts\objects\city.ts" />
-    <TypeScriptCompile Include="Scripts\objects\plane.ts" />
+    <TypeScriptCompile Include="Scripts\objects\Truck.ts" />
     <TypeScriptCompile Include="Scripts\objects\road.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
+    <TypeScriptCompile Include="Scripts\states\gameover.ts" />
+    <TypeScriptCompile Include="Scripts\states\instructions.ts" />
+    <TypeScriptCompile Include="Scripts\states\menu.ts" />
     <TypeScriptCompile Include="Scripts\states\play.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />
@@ -106,7 +115,6 @@
     <TypeScriptCompile Include="Scripts\typings\soundjs\soundjs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\stats\stats.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\tweenjs\tweenjs.d.ts" />
-    <TypeScriptCompile Include="Scripts\utility\utility.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

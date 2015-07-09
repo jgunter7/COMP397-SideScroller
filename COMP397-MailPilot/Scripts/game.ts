@@ -4,15 +4,14 @@
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 
-/// <reference path="utility/utility.ts" />
 /// <reference path="managers/asset.ts" />
 
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/city.ts" />
 /// <reference path="objects/road.ts" />
-/// <reference path="objects/plane.ts" />
-/// <reference path="objects/island.ts" />
-/// <reference path="objects/cloud.ts" />
+/// <reference path="objects/truck.ts" />
+/// <reference path="objects/coin.ts" />
+/// <reference path="objects/lambo.ts" />
 
 /// <reference path="objects/scoreboard.ts" />
 
@@ -20,23 +19,19 @@
 
 /// <reference path="states/play.ts" />
 
-
-// on branch atlas
-
-
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage: createjs.Stage;
 var stats: Stats;
 var game: createjs.Container;
 
-
 // Game Variables
 var city: objects.City;
 var road: objects.Road;
-var plane: objects.Plane;
-var island: objects.Island;
-var clouds: objects.Cloud[] = [];
+var truck: objects.Truck;
+var coin: objects.Coin;
+var enemys: objects.Lambo[] = [];
+var gameState = "menu";
 
 var scoreboard: objects.ScoreBoard;
 
@@ -47,15 +42,15 @@ var collision: managers.Collision;
 
 // Game States
 var play: states.Play;
-
-
+var menu: states.Menu;
+var instructions: states.Instructions;
+var gameover: states.GameOver;
 
 
 // Preloader Function
 function preload() {
     // instantiate asset manager class
     assets = new managers.Asset();
-
 
     //Setup statistics object
     setupStats();
@@ -91,7 +86,20 @@ function setupStats() {
 function gameLoop() {
     stats.begin(); // Begin measuring
 
-    play.update();
+    switch (gameState) {
+        case "menu":
+            menu.update();
+            break;
+        case "instructions":
+            instructions.update();
+            break;
+        case "play":
+            play.update();
+            break;
+        case "gameover":
+            gameover.update();
+            break;
+    }
 
     stage.update();
 
@@ -105,8 +113,34 @@ function main() {
     game = new createjs.Container();
 
     // instantiate play state;
-    play = new states.Play();
+    //play = new states.Play();
+    //instructions = new states.Instructions();
+    menu = new states.Menu();
+    //gameover = new states.GameOver();
 
     //add game container to stage
     stage.addChild(game);
+}
+
+// handles cleanup between states
+function NewGameState() {
+    stage.removeAllChildren();
+    menu = null;
+    instructions = null;
+    play = null;
+    gameover = null;
+    switch (gameState) {
+        case "menu":
+            menu = new states.Menu();
+            break;
+        case "instructions":
+            instructions = new states.Instructions();
+            break;
+        case "play":
+            play = new states.Play();
+            break;
+        case "gameover":
+            gameover = new states.GameOver();
+            break;
+    }
 }

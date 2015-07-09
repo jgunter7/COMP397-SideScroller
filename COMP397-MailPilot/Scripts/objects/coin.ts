@@ -1,13 +1,13 @@
 ﻿module objects {
     // Island Class ++++++++++++++++++++++++++++++++++++++
-    export class Island extends objects.GameObject {
+    export class Coin extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
             super(imageString);
 
-            this.name = "island";
-            this.sound = "yay";
-            this.dy = 5;
+            this.name = "money";
+            this.sound = "ching";
+            this.dx = 5;
 
             this.reset();
         }
@@ -16,22 +16,22 @@
         private checkBounds(): void {
 
             // check if island has left screen
-            if (this.y > 480 + this.height) {
+            if (this.x < 0 - this.width) {
                 this.reset();
             }
         }
 
 
-        private reset(): void {
-            this.x = Math.floor(Math.random() * 640); // start island at random location
-            this.y = -this.height; // start island off stage
+        public reset(): void {
+            this.x = canvas.clientWidth + this.width; // start money bag just off screen
+            this.y = Math.floor(Math.random() * (450 - 335 + 1)) + 335; // random location
         }
 
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
 
-            this.y += this.dy; // moves island down the stage
+            this.x -= this.dx; // moves coin down the container
             this.checkBounds();
         }
     }

@@ -20,7 +20,7 @@ var objects;
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
         Road.prototype.checkBounds = function () {
             // check if road has left screen
-            if (this.x <= -325) {
+            if (this.x == -960) {
                 this.reset();
             }
         };

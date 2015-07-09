@@ -8,6 +8,13 @@
         private manifest = [
             { id: "city", src: "assets/images/city.png" },
             { id: "road", src: "assets/images/road.png" },
+            { id: "start", src: "assets/images/start.png" },
+            { id: "instru", src: "assets/images/instru.png" },
+            { id: "back", src: "assets/images/back.png" },
+            { id: "quit", src: "assets/images/quit.png" },
+            { id: "engine", src: "assets/audio/car.wav" },
+            { id: "ching", src: "assets/audio/ching.wav" },
+            { id: "crash", src: "assets/audio/crash.wav" }
         ];
 
         private data = {
@@ -17,16 +24,16 @@
         ],
 
         "frames": [
-            [2, 2, 226, 176, 0, 0, -1],
-            [2, 180, 62, 60, 0, 0, -1],
-            [66, 180, 61, 49, 0, -4, -10]
+            [2, 2, 542, 271, 0, -1, -34],
+            [2, 275, 164, 198, 0, -6, -4],
+            [168, 275, 298, 148, 0, -11, -46]
         ],
 
         "animations": {
-            "cloud": [0],
-            "island": [1],
-            "plane": [2]
-            }
+            "car": [0],
+            "money": [1],
+            "truck": [2]
+        }
 
         }
 

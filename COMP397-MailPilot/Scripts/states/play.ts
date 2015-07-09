@@ -13,17 +13,22 @@
         public update() {
             city.update();
             road.update();
-            plane.update();
-            island.update();
+            truck.update();
+            coin.update();
 
-            for (var cloud = 0; cloud < 3; cloud++) {
-                clouds[cloud].update();
-                collision.check(clouds[cloud]);
+            for (var enemy = 0; enemy < 2; enemy++) {
+                enemys[enemy].update();
+                collision.check(enemys[enemy], enemy);
             }
 
-            collision.check(island);
+            collision.check(coin, -1);
 
             scoreboard.update();
+            if (scoreboard.lives == 0) {
+                gameState = "gameover";
+                NewGameState();
+            }
+
         }
 
         // main method
@@ -39,17 +44,23 @@
         game.addChild(road);
 
         //add island object to stage
-        island = new objects.Island("island");
-        game.addChild(island);
+        coin = new objects.Coin("money");
+        coin.scaleX = coin.scaleY = Math.min(40 / coin.width, 40 / coin.height);
+        coin.width = coin.getTransformedBounds().width;
+        game.addChild(coin);
 
         // add plane object to stage
-        plane = new objects.Plane("plane");
-        game.addChild(plane);
+        truck = new objects.Truck("truck");
+        truck.scaleX = truck.scaleY = Math.min(75 / truck.width, 75 / truck.height);
+        truck.width = truck.getTransformedBounds().width;
+        game.addChild(truck);
 
         // add 3 cloud objects to stage
-        for (var cloud = 0; cloud < 3; cloud++) {
-            clouds[cloud] = new objects.Cloud("cloud");
-            game.addChild(clouds[cloud]);
+        for (var lambo = 0; lambo < 2; lambo++) {
+            enemys[lambo] = new objects.Lambo("car");
+            enemys[lambo].scaleX = enemys[lambo].scaleY = Math.min(75 / enemys[lambo].width, 75 / enemys[lambo].height);
+            enemys[lambo].width = enemys[lambo].getTransformedBounds().width;
+            game.addChild(enemys[lambo]);
         }
 
 

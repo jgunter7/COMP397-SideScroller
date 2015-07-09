@@ -3,18 +3,16 @@
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
-/// <reference path="utility/utility.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/city.ts" />
 /// <reference path="objects/road.ts" />
-/// <reference path="objects/plane.ts" />
-/// <reference path="objects/island.ts" />
-/// <reference path="objects/cloud.ts" />
+/// <reference path="objects/truck.ts" />
+/// <reference path="objects/coin.ts" />
+/// <reference path="objects/lambo.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/play.ts" />
-// on branch atlas
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
@@ -23,15 +21,19 @@ var game;
 // Game Variables
 var city;
 var road;
-var plane;
-var island;
-var clouds = [];
+var truck;
+var coin;
+var enemys = [];
+var gameState = "menu";
 var scoreboard;
 // Game Managers
 var assets;
 var collision;
 // Game States
 var play;
+var menu;
+var instructions;
+var gameover;
 // Preloader Function
 function preload() {
     // instantiate asset manager class
@@ -62,7 +64,20 @@ function setupStats() {
 // Callback function that creates our Main Game Loop - refreshed 60 fps
 function gameLoop() {
     stats.begin(); // Begin measuring
-    play.update();
+    switch (gameState) {
+        case "menu":
+            menu.update();
+            break;
+        case "instructions":
+            instructions.update();
+            break;
+        case "play":
+            play.update();
+            break;
+        case "gameover":
+            gameover.update();
+            break;
+    }
     stage.update();
     stats.end(); // end measuring
 }
@@ -71,8 +86,33 @@ function main() {
     // instantiate new game container
     game = new createjs.Container();
     // instantiate play state;
-    play = new states.Play();
+    //play = new states.Play();
+    //instructions = new states.Instructions();
+    menu = new states.Menu();
+    //gameover = new states.GameOver();
     //add game container to stage
     stage.addChild(game);
+}
+// handles cleanup between states
+function NewGameState() {
+    stage.removeAllChildren();
+    menu = null;
+    instructions = null;
+    play = null;
+    gameover = null;
+    switch (gameState) {
+        case "menu":
+            menu = new states.Menu();
+            break;
+        case "instructions":
+            instructions = new states.Instructions();
+            break;
+        case "play":
+            play = new states.Play();
+            break;
+        case "gameover":
+            gameover = new states.GameOver();
+            break;
+    }
 }
 //# sourceMappingURL=game.js.map

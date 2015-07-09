@@ -5,36 +5,31 @@
         }
 
         //PUBLIC METHODS ++++++++++++++++++++++++
-        // check the distance between plane and any other game object
-        public check(gameObject: objects.GameObject) {
-        var p1: createjs.Point = new createjs.Point();
-        var p2: createjs.Point = new createjs.Point();
+        // check the distance between truck and any other game object
+        public check(gameObject: objects.GameObject, x: number) {
+            var rect1: createjs.Rectangle;
+            var rect2: createjs.Rectangle;
+            rect1 = truck.getTransformedBounds();
+            rect2 = gameObject.getTransformedBounds();
 
-        p1.x = plane.x;
-        p1.y = plane.y;
+            if (rect1.intersects(rect2)) {
+                if (gameObject.isColliding == false) {
+                    createjs.Sound.play(gameObject.sound);
+                    if (gameObject.name == "car") {
+                        enemys[x].reset();
+                        scoreboard.lives--;
 
-        p2.x = gameObject.x;
-        p2.y = gameObject.y;
-
-
-        if (utility.distance(p1, p2) < ((plane.height * 0.5) + (gameObject.height * 0.5))) {
-            if (gameObject.isColliding == false) {
-                createjs.Sound.play(gameObject.sound);
-                if (gameObject.name == "cloud") {
-                    scoreboard.lives--;
+                    }
+                    if (gameObject.name == "money") {
+                        coin.reset();
+                        scoreboard.score += 100;
+                    }
                 }
-                if (gameObject.name == "island") {
-                    scoreboard.score += 100;
-                }
+                gameObject.isColliding = true;
             }
-            gameObject.isColliding = true;
-
-        }
-        else {
-            gameObject.isColliding = false;
+            else {
+                gameObject.isColliding = false;
+            }
         }
     }
-
-
-    }
-} 
+}
