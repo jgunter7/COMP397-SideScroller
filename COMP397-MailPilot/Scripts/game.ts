@@ -125,6 +125,8 @@ function main() {
 // handles cleanup between states
 function NewGameState() {
     stage.removeAllChildren();
+    if (play != undefined)
+        truck.shutupTruck(); // stop engine noise
     menu = null;
     instructions = null;
     play = null;

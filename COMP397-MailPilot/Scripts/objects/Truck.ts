@@ -10,7 +10,7 @@
             this.x = 50;
             this.y = 430;
 
-            createjs.Sound.play(this.sound, {"loop": -1});
+            createjs.Sound.play(this.sound, { "loop": -1 });
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
@@ -20,6 +20,10 @@
                 this.y = 450;
             if (this.y < 335)
                 this.y = 335;
+        }
+
+        public shutupTruck(): void {
+            createjs.Sound.stop();
         }
     }
 } 

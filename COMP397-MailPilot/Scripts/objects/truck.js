@@ -25,6 +25,9 @@ var objects;
             if (this.y < 335)
                 this.y = 335;
         };
+        Truck.prototype.shutupTruck = function () {
+            createjs.Sound.stop();
+        };
         return Truck;
     })(objects.GameObject);
     objects.Truck = Truck;
