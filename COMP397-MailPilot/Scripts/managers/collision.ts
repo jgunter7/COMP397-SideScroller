@@ -11,7 +11,8 @@
             var rect2: createjs.Rectangle;
             rect1 = truck.getTransformedBounds();
             rect2 = gameObject.getTransformedBounds();
-
+            //This game users ractangles as the hit areas, this works better than the distance 
+            // formula for my situation.
             if (rect1.intersects(rect2)) {
                 if (gameObject.isColliding == false) {
                     createjs.Sound.play(gameObject.sound);

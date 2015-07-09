@@ -37,6 +37,7 @@ var states;
     states.Instructions = Instructions;
 })(states || (states = {}));
 var back;
+//Change gamestate when back button is clicked
 function btnBack_Click() {
     back.alpha = 0.7;
     gameState = "menu";

@@ -1,5 +1,5 @@
 ﻿module objects {
-    // Island Class ++++++++++++++++++++++++++++++++++++++
+    // Coin Class ++++++++++++++++++++++++++++++++++++++
     export class Coin extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
@@ -15,7 +15,7 @@
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
         private checkBounds(): void {
 
-            // check if island has left screen
+            // check if coin has left screen
             if (this.x < 0 - this.width) {
                 this.reset();
             }

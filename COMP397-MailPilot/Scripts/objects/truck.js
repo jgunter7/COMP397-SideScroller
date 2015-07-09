@@ -6,7 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // Plane Class ++++++++++++++++++++++++++++++++++++++
+    // Truck Class ++++++++++++++++++++++++++++++++++++++
     var Truck = (function (_super) {
         __extends(Truck, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
@@ -19,17 +19,17 @@ var objects;
         }
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         Truck.prototype.update = function () {
-            this.y = stage.mouseY; // position plane under mouse
+            this.y = stage.mouseY; // position truck under mouse
             if (this.y > 450)
                 this.y = 450;
             if (this.y < 335)
                 this.y = 335;
         };
         Truck.prototype.shutupTruck = function () {
-            createjs.Sound.stop();
+            createjs.Sound.stop(); // stops audio manually
         };
         return Truck;
     })(objects.GameObject);
     objects.Truck = Truck;
 })(objects || (objects = {}));
-//# sourceMappingURL=truck.js.map
+//# sourceMappingURL=Truck.js.map

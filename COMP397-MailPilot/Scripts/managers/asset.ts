@@ -1,4 +1,5 @@
 ﻿module managers {
+    // Loads all images,sprites, and audio
     export class Asset {
         // PUBLIC PROPERTIES
         public loader: createjs.LoadQueue;

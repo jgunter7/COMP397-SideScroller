@@ -1,5 +1,6 @@
 var states;
 (function (states) {
+    // Game over state after playing the game
     var GameOver = (function () {
         //CONSTRUCTOR
         function GameOver() {
@@ -14,7 +15,7 @@ var states;
         GameOver.prototype.main = function () {
             // instantiate new game container
             game = new createjs.Container();
-            //add ocean object to stage
+            //add city/road paralox to the game container
             city = new objects.City(assets.loader.getResult("city"));
             game.addChild(city);
             road = new objects.Road(assets.loader.getResult("road"));
@@ -45,11 +46,13 @@ var states;
 })(states || (states = {}));
 var starte;
 var quit;
+// Change gamestate to play when start is clicked
 function btnStartE_Click() {
     starte.alpha = 0.7;
     gameState = "play";
     NewGameState();
 }
+// Change gamestate to menu when quit is clicked
 function btnQuit_Click() {
     quit.alpha = 0.7;
     gameState = "menu";

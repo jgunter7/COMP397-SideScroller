@@ -47,6 +47,7 @@
 
 var back: createjs.Bitmap;
 
+//Change gamestate when back button is clicked
 function btnBack_Click() {
     back.alpha = 0.7;
     gameState = "menu";

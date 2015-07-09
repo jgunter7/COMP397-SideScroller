@@ -1,5 +1,6 @@
 var states;
 (function (states) {
+    // Gamestate for actual game play
     var Play = (function () {
         //CONSTRUCTOR
         function Play() {
@@ -27,22 +28,22 @@ var states;
         Play.prototype.main = function () {
             // instantiate new game container
             game = new createjs.Container();
-            //add ocean object to stage
+            //add city / road paralax to game container
             city = new objects.City(assets.loader.getResult("city"));
             game.addChild(city);
             road = new objects.Road(assets.loader.getResult("road"));
             game.addChild(road);
-            //add island object to stage
+            //add coin object to game container
             coin = new objects.Coin("money");
             coin.scaleX = coin.scaleY = Math.min(40 / coin.width, 40 / coin.height);
             coin.width = coin.getTransformedBounds().width;
             game.addChild(coin);
-            // add plane object to stage
+            // add truck object to game container
             truck = new objects.Truck("truck");
             truck.scaleX = truck.scaleY = Math.min(75 / truck.width, 75 / truck.height);
             truck.width = truck.getTransformedBounds().width;
             game.addChild(truck);
-            // add 3 cloud objects to stage
+            // add 2 lambo objects to game container
             for (var lambo = 0; lambo < 2; lambo++) {
                 enemys[lambo] = new objects.Lambo("car");
                 enemys[lambo].scaleX = enemys[lambo].scaleY = Math.min(75 / enemys[lambo].width, 75 / enemys[lambo].height);

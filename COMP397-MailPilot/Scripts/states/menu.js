@@ -1,5 +1,6 @@
 var states;
 (function (states) {
+    // Main menu gamestate
     var Menu = (function () {
         //CONSTRUCTOR
         function Menu() {
@@ -8,6 +9,7 @@ var states;
         // PUBLIC METHODS
         // update method
         Menu.prototype.update = function () {
+            // allow city and road to animate
             city.update();
             road.update();
         };
@@ -15,6 +17,7 @@ var states;
         Menu.prototype.main = function () {
             // instantiate new game container
             game = new createjs.Container();
+            // add city and road paralax
             city = new objects.City(assets.loader.getResult("city"));
             game.addChild(city);
             road = new objects.Road(assets.loader.getResult("road"));

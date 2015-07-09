@@ -1,4 +1,5 @@
 ﻿module objects {
+    // Road paralax with the city
     // Road Class ++++++++++++++++++++++++++++++++++++++
     export class Road extends createjs.Bitmap {
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++

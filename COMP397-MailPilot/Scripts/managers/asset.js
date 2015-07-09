@@ -1,5 +1,6 @@
 var managers;
 (function (managers) {
+    // Loads all images,sprites, and audio
     var Asset = (function () {
         // CONSTRUCTOR
         function Asset() {

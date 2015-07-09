@@ -1,5 +1,6 @@
 var objects;
 (function (objects) {
+    //Display the score on the game play state
     var ScoreBoard = (function () {
         // CONSTRUCTOR +++++++++++++++++++
         function ScoreBoard() {

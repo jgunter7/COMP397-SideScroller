@@ -6,7 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // Island Class ++++++++++++++++++++++++++++++++++++++
+    // Coin Class ++++++++++++++++++++++++++++++++++++++
     var Coin = (function (_super) {
         __extends(Coin, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
@@ -19,7 +19,7 @@ var objects;
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++++
         Coin.prototype.checkBounds = function () {
-            // check if island has left screen
+            // check if coin has left screen
             if (this.x < 0 - this.width) {
                 this.reset();
             }

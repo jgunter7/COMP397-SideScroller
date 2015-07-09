@@ -6,7 +6,8 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // Cloud Class ++++++++++++++++++++++++++++++++++++++
+    // Lambo Class ++++++++++++++++++++++++++++++++++++++
+    // This is the enemy class which brings the players live count down
     var Lambo = (function (_super) {
         __extends(Lambo, _super);
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++

@@ -1,5 +1,5 @@
 ﻿module objects {
-    // Plane Class ++++++++++++++++++++++++++++++++++++++
+    // Truck Class ++++++++++++++++++++++++++++++++++++++
     export class Truck extends objects.GameObject {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         constructor(imageString: string) {
@@ -15,7 +15,7 @@
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++
         public update(): void {
-            this.y = stage.mouseY; // position plane under mouse
+            this.y = stage.mouseY; // position truck under mouse
             if (this.y > 450)
                 this.y = 450;
             if (this.y < 335)
@@ -23,7 +23,7 @@
         }
 
         public shutupTruck(): void {
-            createjs.Sound.stop();
+            createjs.Sound.stop(); // stops audio manually
         }
     }
 } 

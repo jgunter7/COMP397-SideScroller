@@ -1,5 +1,5 @@
 ﻿module objects {
-    // Cloud Class ++++++++++++++++++++++++++++++++++++++
+    // GameObject Super Class ++++++++++++++++++++++++++++++++++++++
     export class GameObject extends createjs.Sprite {
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++
         public width: number;

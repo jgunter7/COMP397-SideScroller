@@ -1,4 +1,5 @@
 ﻿module objects {
+    //Display the score on the game play state
     export class ScoreBoard {
         // PUBLIC PROPERTIES
         public score: number = 0;

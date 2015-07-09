@@ -6,6 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
+    // Road paralax with the city
     // Road Class ++++++++++++++++++++++++++++++++++++++
     var Road = (function (_super) {
         __extends(Road, _super);

@@ -1,4 +1,5 @@
 ﻿module states {
+    // Main menu gamestate
     export class Menu {
         //CONSTRUCTOR
         constructor() {
@@ -9,6 +10,7 @@
         // PUBLIC METHODS
         // update method
         public update() {
+            // allow city and road to animate
             city.update();
             road.update();
         }
@@ -18,7 +20,7 @@
             // instantiate new game container
             game = new createjs.Container();
 
-
+            // add city and road paralax
             city = new objects.City(assets.loader.getResult("city"));
             game.addChild(city);
 

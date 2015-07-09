@@ -1,5 +1,6 @@
 ﻿module objects {
-    // Cloud Class ++++++++++++++++++++++++++++++++++++++
+    // Lambo Class ++++++++++++++++++++++++++++++++++++++
+    // This is the enemy class which brings the players live count down
     export class Lambo extends objects.GameObject {
 
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
